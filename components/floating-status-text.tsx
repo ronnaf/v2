@@ -8,7 +8,7 @@ interface Props {
 
 export const FloatingStatusText = (props: Props) => {
   return (
-    <Box pos="fixed" bottom={12} right={12}>
+    <Box pos="fixed" bottom={{ sm: 8, lg: 16 }} right={{ sm: 8, lg: 16 }}>
       <Text color="gray.600">
         v{config.version}
         {props.isWip && ` | wip`}

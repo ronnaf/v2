@@ -7,6 +7,7 @@ import Image from "next/image";
 import logo from "../../public/logo.webp";
 import doodle from "../../public/doodle.webp";
 import { FloatingSocialIcons } from "../floating-social-icons";
+import { FloatingStatusText } from "../floating-status-text";
 
 interface Props {
   landing: Landing;
@@ -25,6 +26,7 @@ export const LandingSection = (props: Props) => {
         <Image src={doodle} alt="Logo" />
       </Box>
       <FloatingSocialIcons />
+      <FloatingStatusText isWip={props.landing.iswip} />
     </Box>
   );
 };

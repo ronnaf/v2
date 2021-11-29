@@ -25,11 +25,15 @@ const Home: NextPage<Props> = (props) => {
 const LANDING_QUERY = gql`
   query LandingQuery {
     landing {
-      title
       greeting
+      title
+      iswip
       descriptionlevel1
       descriptionlevel2
       descriptionlevel3
+      doodleimage {
+        url
+      }
     }
   }
 `;

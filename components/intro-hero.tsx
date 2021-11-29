@@ -2,7 +2,7 @@ import { Box, Button, HStack, Text } from "@chakra-ui/react";
 import Emoji from "a11y-react-emoji";
 import React, { useState } from "react";
 import { Landing } from "../lib/models/landing";
-import ReactMarkdown from "react-markdown";
+import { Markdown } from "./core/markdown";
 
 interface Props extends Landing {}
 
@@ -19,13 +19,9 @@ export const IntroHero = (props: Props) => {
 
   return (
     <Box>
-      <Text fontSize="2xl">
-        <ReactMarkdown>{props.greeting}</ReactMarkdown>
-      </Text>
+      <Markdown fontSize="2xl">{props.greeting}</Markdown>
       <Box my={4} />
-      <Text fontSize="4xl">
-        <ReactMarkdown>{props.title}</ReactMarkdown>
-      </Text>
+      <Markdown fontSize="4xl">{props.title}</Markdown>
       <Box my={8} />
       <Text w={{ lg: "100%", xl: "75%" }} lineHeight={2}>
         {props.descriptionlevel1}

@@ -1,7 +1,7 @@
 import Icon from "@chakra-ui/icon";
 import { Box, HStack, Text, VStack } from "@chakra-ui/layout";
 import React from "react";
-import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+import { FiGithub, FiLink } from "react-icons/fi";
 import { Project } from "../lib/models/project";
 import Image from "next/image";
 
@@ -31,8 +31,11 @@ export const ProjectCard = (props: Props) => {
           ))}
         </HStack>
         <HStack spacing={3}>
-          <Icon as={FiGithub} w={4} h={4} />
-          <Icon as={FiLinkedin} w={4} h={4} />
+          {props.project.links.map((link) => (
+            <a key={link.link} href={link.link} target="_blank" rel="noreferrer noopener">
+              <Icon as={link.provider === "github" ? FiGithub : FiLink} w={4} h={4} />
+            </a>
+          ))}
         </HStack>
       </VStack>
     </HStack>

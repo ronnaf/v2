@@ -30,7 +30,9 @@ export const FloatingSocialIcons = (props: Props) => {
     <Box pos="fixed" bottom={bottomAndLeft} left={bottomAndLeft} display={{ sm: "none", md: "block" }}>
       <VStack spacing={5}>
         {socialLinks.map((link) => (
-          <Icon key={link.id} as={link.icon} w={5} h={5} />
+          <a key={link.id} href={link.link} target="_blank" rel="noreferrer noopener">
+            <Icon as={link.icon} w={5} h={5} />
+          </a>
         ))}
       </VStack>
     </Box>

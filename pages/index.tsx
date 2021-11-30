@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/layout";
 import { gql } from "graphql-request";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import { useRef } from "react";
 import { LandingSection } from "../components/sections/landing-section";
 import { ProjectSection } from "../components/sections/projects-section";
 import { request } from "../lib/datocms";
@@ -12,6 +13,12 @@ interface Props {
 }
 
 const Home: NextPage<Props> = (props) => {
+  const projectsRef = useRef<HTMLDivElement>(null);
+
+  const scrollToProjects = () => {
+    projectsRef.current?.scrollIntoView();
+  };
+
   return (
     <Box>
       <Head>
@@ -19,7 +26,8 @@ const Home: NextPage<Props> = (props) => {
         <meta name="description" content="Ronna's online portflio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <LandingSection landing={props.data.landing} />
+      <LandingSection landing={props.data.landing} onArrowClick={scrollToProjects} />
+      <ProjectSection ref={projectsRef} />
     </Box>
   );
 };

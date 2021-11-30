@@ -3,7 +3,11 @@ import Image from "next/image";
 import React from "react";
 import arrowDown from "../public/arrow_down.webp";
 
-export const FloatingArrow = () => {
+interface Props {
+  onClick?: () => void;
+}
+
+export const FloatingArrow = (props: Props) => {
   return (
     <Box
       pos="absolute"
@@ -14,6 +18,7 @@ export const FloatingArrow = () => {
       transform="translateX(-50%)"
       _hover={{ cursor: "pointer" }}
       display={{ sm: "none", md: "block" }}
+      onClick={props.onClick}
     >
       <Text _groupHover={{ bg: "yellow.300", color: "gray.900", px: 2 }}>see my stuff</Text>
       <Box my={4} />

@@ -13,11 +13,12 @@ import { FloatingArrow } from "../floating-arrow";
 
 interface Props {
   landing: Landing;
+  onArrowClick?: () => void;
 }
 
 export const LandingSection = (props: Props) => {
   return (
-    <Box h="100vh" pos="relative">
+    <Box minH="100vh" pos="relative">
       <ContentWrapper>
         <Center pt={{ sm: 12, md: 16 }} pb={{ sm: 12, md: 16, xl: 20 }}>
           <Image src={logo} alt="Logo" width={60} height={60} />
@@ -27,7 +28,7 @@ export const LandingSection = (props: Props) => {
       <Box pos="absolute" bottom="10%" right="10%" width="30%" minW="512px" maxW="672px" opacity={0.05}>
         <Image src={doodle} alt="Logo" />
       </Box>
-      <FloatingArrow />
+      <FloatingArrow onClick={props.onArrowClick} />
       {/* Fixed floating elements */}
       <FloatingSocialIcons />
       <FloatingStatusText isWip={props.landing.iswip} />

@@ -7,9 +7,10 @@ import { LandingSection } from "../components/sections/landing-section";
 import { ProjectSection } from "../components/sections/projects-section";
 import { request } from "../lib/datocms";
 import { Landing } from "../lib/models/landing";
+import { Project } from "../lib/models/project";
 
 interface Props {
-  data: { landing: Landing };
+  data: { landing: Landing; allProjects: Project[] };
 }
 
 const Home: NextPage<Props> = (props) => {
@@ -27,7 +28,7 @@ const Home: NextPage<Props> = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <LandingSection landing={props.data.landing} onArrowClick={scrollToProjects} />
-      <ProjectSection ref={projectsRef} />
+      <ProjectSection ref={projectsRef} projects={props.data.allProjects} />
     </Box>
   );
 };
@@ -45,6 +46,18 @@ const LANDING_QUERY = gql`
       doodleimage {
         url
       }
+    }
+    allProjects(orderBy: dateStarted_DESC) {
+      id
+      title
+      subtitle
+      description
+      thumbnail {
+        url
+      }
+      tags
+      links
+      isMine
     }
   }
 `;

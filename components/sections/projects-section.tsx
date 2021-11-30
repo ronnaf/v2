@@ -4,6 +4,7 @@ import { ContentWrapper } from "../core/content-wrapper";
 import Image from "next/image";
 import rocket from "../../public/rocket.webp";
 import { ProjectCard } from "../project-card";
+import { Project } from "../../lib/models/project";
 
 // All these values are in pixels
 const ROCKET_ICON_SIZE = 60;
@@ -12,7 +13,11 @@ const LINE_GROUND_GAP = 6;
 
 const inPx = (value: number) => `${value}px`;
 
-export const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
+interface Props {
+  projects: Project[];
+}
+
+export const ProjectSection = forwardRef<HTMLDivElement, Props>((props, ref) => {
   return (
     <ContentWrapper ref={ref} py={16} minH="100vh">
       <VStack w="75%" spacing={6}>
@@ -54,9 +59,9 @@ export const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
         </Box>
       </VStack>
       <VStack mt={inPx(ROCKET_LINE_HEIGHT + 24)} alignItems="flex-start" spacing={12}>
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {props.projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </VStack>
     </ContentWrapper>
   );

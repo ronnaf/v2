@@ -21,7 +21,7 @@ const socialLinks = [
   },
 ];
 
-const bottomAndLeft = { sm: 8, md: 10, xl: 16 };
+const bottomAndLeft = { sm: 8, md: 10, xl: 12 };
 
 interface Props {}
 

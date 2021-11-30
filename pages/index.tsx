@@ -3,6 +3,7 @@ import { gql } from "graphql-request";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { LandingSection } from "../components/sections/landing-section";
+import { ProjectSection } from "../components/sections/projects-section";
 import { request } from "../lib/datocms";
 import { Landing } from "../lib/models/landing";
 
@@ -28,6 +29,7 @@ const LANDING_QUERY = gql`
     landing {
       greeting
       title
+      subtitle
       iswip
       descriptionlevel1
       descriptionlevel2

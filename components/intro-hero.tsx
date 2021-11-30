@@ -21,9 +21,11 @@ export const IntroHero = (props: Props) => {
     <Box pb={16}>
       <Markdown fontSize={{ sm: "xl", md: "2xl" }}>{props.greeting}</Markdown>
       <Box my={4} />
-      <Markdown fontSize={{ sm: "2xl", md: "4xl" }}>{props.title}</Markdown>
+      <Markdown fontSize={{ sm: "3xl", md: "5xl" }}>{props.title}</Markdown>
+      <Box my={2} />
+      <Markdown fontSize={{ sm: "xl", md: "2xl" }}>{props.subtitle}</Markdown>
       <Box my={{ sm: 6, md: 8 }} />
-      <Text w={{ sm: "100%", xl: "75%" }} lineHeight={2}>
+      <Text w="100%" lineHeight={2}>
         {props.descriptionlevel1}
         {levelOfInformation >= 1 && (
           <>

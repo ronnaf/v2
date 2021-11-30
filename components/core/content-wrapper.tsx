@@ -7,7 +7,7 @@ interface Props extends ContainerProps {
 
 export const ContentWrapper = ({ children, ...rest }: Props) => {
   return (
-    <Container maxW="container.xl" px={16} {...rest}>
+    <Container maxW="container.xl" px={{ sm: 12, md: 24, xl: 40 }} {...rest}>
       {children}
     </Container>
   );

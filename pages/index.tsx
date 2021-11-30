@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/layout";
 import { gql } from "graphql-request";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
@@ -11,14 +12,14 @@ interface Props {
 
 const Home: NextPage<Props> = (props) => {
   return (
-    <>
+    <Box>
       <Head>
         <title>Ronna Firmo</title>
         <meta name="description" content="Ronna's online portflio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <LandingSection landing={props.data.landing} />
-    </>
+    </Box>
   );
 };
 

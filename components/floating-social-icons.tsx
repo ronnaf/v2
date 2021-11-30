@@ -21,11 +21,13 @@ const socialLinks = [
   },
 ];
 
+const bottomAndLeft = { sm: 8, md: 10, xl: 16 };
+
 interface Props {}
 
 export const FloatingSocialIcons = (props: Props) => {
   return (
-    <Box pos="fixed" bottom={{ sm: 8, lg: 16 }} left={{ sm: 8, lg: 16 }}>
+    <Box pos="fixed" bottom={bottomAndLeft} left={bottomAndLeft} display={{ sm: "none", md: "block" }}>
       <VStack spacing={5}>
         {socialLinks.map((link) => (
           <Icon key={link.id} as={link.icon} w={5} h={5} />

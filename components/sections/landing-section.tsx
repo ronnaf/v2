@@ -17,7 +17,7 @@ export const LandingSection = (props: Props) => {
   return (
     <Box h="100vh" pos="relative">
       <ContentWrapper>
-        <Center pt={{ sm: 16, lg: 24 }} pb={{ sm: 20, lg: 32 }}>
+        <Center pt={{ sm: 12, md: 16, xl: 20 }} pb={{ sm: 12, md: 16, xl: 20 }}>
           <Image src={logo} alt="Logo" width={60} height={60} />
         </Center>
         <IntroHero {...props.landing} />

@@ -1,15 +1,14 @@
-import { Box, Center, Text } from "@chakra-ui/layout";
+import { Box, Center } from "@chakra-ui/layout";
+import Image from "next/image";
 import React from "react";
 import { Landing } from "../../lib/models/landing";
-import { ContentWrapper } from "../core/content-wrapper";
-import { IntroHero } from "../intro-hero";
-import Image from "next/image";
-import logo from "../../public/logo.webp";
 import doodle from "../../public/doodle.webp";
-import arrowDown from "../../public/arrow_down.webp";
+import logo from "../../public/logo.webp";
+import { ContentWrapper } from "../core/content-wrapper";
+import { FloatingArrow } from "../floating-arrow";
 import { FloatingSocialIcons } from "../floating-social-icons";
 import { FloatingStatusText } from "../floating-status-text";
-import { FloatingArrow } from "../floating-arrow";
+import { IntroHero } from "../intro-hero";
 
 interface Props {
   landing: Landing;

@@ -17,12 +17,12 @@ interface Props {
   projects: Project[];
 }
 
-export const ProjectSection = forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const ThingsIveBuiltSection = forwardRef<HTMLDivElement, Props>((props, ref) => {
   return (
     <ContentWrapper ref={ref} py={16} minH="100vh">
       <VStack w="75%" spacing={6}>
         <Text fontSize="2xl" fontWeight="bold">
-          things i&apos;ve worked on
+          things i&apos;ve built
         </Text>
         <Box pos="relative">
           <Image src={rocket} alt="Rocket" width={inPx(ROCKET_ICON_SIZE)} height={inPx(ROCKET_ICON_SIZE)} />
@@ -67,4 +67,4 @@ export const ProjectSection = forwardRef<HTMLDivElement, Props>((props, ref) => 
   );
 });
 
-ProjectSection.displayName = "ProjectSection";
+ThingsIveBuiltSection.displayName = "ProjectSection";

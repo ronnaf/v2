@@ -4,7 +4,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { useRef } from "react";
 import { LandingSection } from "../components/sections/landing-section";
-import { ProjectSection } from "../components/sections/projects-section";
+import { ThingsIveBuiltSection } from "../components/sections/things-ive-built-section";
 import { request } from "../lib/datocms";
 import { Landing } from "../lib/models/landing";
 import { Project } from "../lib/models/project";
@@ -28,7 +28,7 @@ const Home: NextPage<Props> = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <LandingSection landing={props.data.landing} onArrowClick={scrollToProjects} />
-      <ProjectSection ref={projectsRef} projects={props.data.allProjects} />
+      <ThingsIveBuiltSection ref={projectsRef} projects={props.data.allProjects} />
     </Box>
   );
 };

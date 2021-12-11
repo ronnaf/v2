@@ -1,23 +1,22 @@
-import { Box, Center, Flex, Heading, HStack, Spacer, Stack, Text, VStack } from "@chakra-ui/layout";
-import React, { forwardRef } from "react";
-import { ContentWrapper } from "../core/content-wrapper";
+import { Box, Text, VStack } from "@chakra-ui/layout";
 import Image from "next/image";
-import rocket from "../../public/rocket.webp";
-import { ProjectCard } from "../project-card";
+import React, { forwardRef } from "react";
 import { Project } from "../../lib/models/project";
+import { inPx } from "../../lib/utils/in-px";
+import rocket from "../../public/rocket.png";
+import { ContentWrapper } from "../core/content-wrapper";
+import { ProjectListItem } from "../project-list-item";
 
 // All these values are in pixels
 const ROCKET_ICON_SIZE = 60;
 const ROCKET_LINE_HEIGHT = 100;
 const LINE_GROUND_GAP = 6;
 
-const inPx = (value: number) => `${value}px`;
-
 interface Props {
   projects: Project[];
 }
 
-export const ThingsIveBuiltSection = forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const FeaturedProjectsSection = forwardRef<HTMLDivElement, Props>((props, ref) => {
   return (
     <ContentWrapper ref={ref} py={16} minH="100vh">
       <VStack w="75%" spacing={6}>
@@ -60,11 +59,11 @@ export const ThingsIveBuiltSection = forwardRef<HTMLDivElement, Props>((props, r
       </VStack>
       <VStack mt={inPx(ROCKET_LINE_HEIGHT + 24)} alignItems="flex-start" spacing={12}>
         {props.projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectListItem key={project.id} project={project} />
         ))}
       </VStack>
     </ContentWrapper>
   );
 });
 
-ThingsIveBuiltSection.displayName = "ProjectSection";
+FeaturedProjectsSection.displayName = "FeaturedProjectsSection";

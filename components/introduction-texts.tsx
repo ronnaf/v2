@@ -6,7 +6,7 @@ import { Markdown } from "./core/markdown";
 
 interface Props extends Landing {}
 
-export const IntroHero = (props: Props) => {
+export const IntroductionTexts = (props: Props) => {
   const [levelOfInformation, setLevelOfInformation] = useState(0);
 
   const showMoreInformation = () => {
@@ -19,13 +19,17 @@ export const IntroHero = (props: Props) => {
 
   return (
     <Box pb={16}>
-      <Markdown fontSize={{ sm: "xl", md: "2xl" }}>{props.greeting}</Markdown>
+      <Markdown fontSize={{ sm: "xl", md: "2xl" }} color="subtitle.200">
+        {props.greeting}
+      </Markdown>
       <Box my={4} />
       <Markdown fontSize={{ sm: "3xl", md: "5xl" }}>{props.title}</Markdown>
       <Box my={2} />
-      <Markdown fontSize={{ sm: "xl", md: "2xl" }}>{props.subtitle}</Markdown>
+      <Markdown fontSize={{ sm: "xl", md: "2xl" }} color="secondary.500">
+        {props.subtitle}
+      </Markdown>
       <Box my={{ sm: 6, md: 8 }} />
-      <Text w="100%" lineHeight={2}>
+      <Text w="100%" lineHeight={2} color="subtitle.200">
         {props.descriptionlevel1}
         {levelOfInformation >= 1 && (
           <>

@@ -5,15 +5,23 @@ export interface Project {
   description: string;
   thumbnail: Thumbnail;
   tags: string[];
-  links: Link[];
+  links: Link[] | null;
   isMine: boolean;
+  builtAt: string;
+  featured: boolean;
+  projectType: string;
+  screenshots: Screenshot[];
 }
 
-interface Thumbnail {
+export interface Thumbnail {
   url: string;
 }
 
-interface Link {
+export interface Link {
   provider: string;
   link: string;
+}
+
+export interface Screenshot {
+  url: string;
 }

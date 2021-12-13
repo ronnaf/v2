@@ -81,6 +81,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       featuredProjects,
       regularProjects,
     },
+    revalidate: 60, // seconds
   };
 };
 

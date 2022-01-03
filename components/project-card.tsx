@@ -4,12 +4,12 @@ import _ from "lodash";
 import Image from "next/image";
 import React from "react";
 import { FiGithub, FiLink } from "react-icons/fi";
-import { Project } from "../../lib/models/project";
-import { inPx } from "../../lib/utils/in-px";
-import mobileIcon from "../../public/mobile_logo.png";
-import webIcon from "../../public/web_logo.png";
-import desktopIcon from "../../public/desktop_logo.png";
-import crossPlatformIcon from "../../public/cross_platform_logo.png";
+import { Project } from "../lib/models/project";
+import { inPx } from "../lib/utils/in-px";
+import mobileIcon from "../public/mobile_logo.png";
+import webIcon from "../public/web_logo.png";
+import desktopIcon from "../public/desktop_logo.png";
+import crossPlatformIcon from "../public/cross_platform_logo.png";
 
 type Props = {
   project: Project;

@@ -6,7 +6,7 @@ import { Project } from "../../lib/models/project";
 import { inPx } from "../../lib/utils/in-px";
 import build from "../../public/build.png";
 import { ContentWrapper } from "../core/content-wrapper";
-import { ProjectCard } from "./project-card";
+import { ProjectCard } from "../project-card";
 
 const ICON_SIZE = inPx(60);
 
@@ -26,7 +26,13 @@ export const ProjectGridSection = forwardRef<HTMLDivElement, Props>((props, ref)
         </Text>
       </VStack>
       <Box my={20} />
-      <Grid templateColumns="repeat(3, 1fr)" gap={5}>
+      <Grid
+        templateColumns={{
+          sm: "minmax(272px, 1fr)",
+          md: "repeat(3, minmax(272px, 1fr))",
+        }}
+        gap={5}
+      >
         {props.projects.map((project) => {
           return <ProjectCard key={project.id} project={project} />;
         })}

@@ -1,5 +1,5 @@
 import Icon from "@chakra-ui/icon";
-import { Box, HStack, Text, VStack } from "@chakra-ui/layout";
+import { Box, HStack, Text, VStack, Grid } from "@chakra-ui/layout";
 import React from "react";
 import { FiGithub, FiLink } from "react-icons/fi";
 import { Project } from "../lib/models/project";
@@ -10,11 +10,11 @@ interface Props {
   project: Project;
 }
 
-export const ProjectListItem = (props: Props) => {
+export const FeaturedProject = (props: Props) => {
   const [secondary500] = useToken("colors", ["secondary.500"]);
   return (
-    <HStack spacing={10} alignItems="flex-start">
-      <Box pos="relative" flexShrink={0} w="312px" h="196px" borderRadius="lg" overflow="hidden">
+    <Grid gap={{ sm: 6, md: 10 }} templateColumns={{ sm: "1fr", md: "1fr 2fr" }}>
+      <Box pos="relative" flexShrink={0} h="196px" borderRadius="lg" overflow="hidden">
         <Image src={props.project.thumbnail.url} alt="Rocket" layout="fill" objectFit="cover" />
       </Box>
       <VStack alignItems="flex-start" spacing={4}>
@@ -44,6 +44,6 @@ export const ProjectListItem = (props: Props) => {
           ))}
         </HStack>
       </VStack>
-    </HStack>
+    </Grid>
   );
 };

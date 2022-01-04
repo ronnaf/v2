@@ -1,19 +1,21 @@
 import { Box, Button, HStack, Text } from "@chakra-ui/react";
 import Emoji from "a11y-react-emoji";
 import React, { useState } from "react";
-import { Landing } from "../lib/models/landing";
+import { LandingDetails } from "../lib/models/landing-details";
 import { Markdown } from "./core/markdown";
 
-interface Props extends Landing {}
+interface Props extends LandingDetails {
+  // more properties if necessary
+}
 
 export const IntroductionTexts = (props: Props) => {
   const [levelOfInformation, setLevelOfInformation] = useState(0);
 
-  const showMoreInformation = () => {
+  const handleShowMoreClick = () => {
     setLevelOfInformation((prev) => prev + 1);
   };
 
-  const resetLevelOfInformation = () => {
+  const handleShowLessClick = () => {
     setLevelOfInformation(0);
   };
 
@@ -46,18 +48,18 @@ export const IntroductionTexts = (props: Props) => {
       </Text>
       <Box my={6} />
       {levelOfInformation === 0 && (
-        <Button size="sm" onClick={showMoreInformation}>
+        <Button size="sm" onClick={handleShowMoreClick}>
           Show more
         </Button>
       )}
       {levelOfInformation === 1 && (
-        <Button size="sm" onClick={showMoreInformation}>
+        <Button size="sm" onClick={handleShowMoreClick}>
           Show too much information...
         </Button>
       )}
       {levelOfInformation === 2 && (
         <HStack alignItems="center">
-          <Button size="sm" onClick={resetLevelOfInformation}>
+          <Button size="sm" onClick={handleShowLessClick}>
             Show less
           </Button>
           <Emoji symbol="😬" label="wave" />

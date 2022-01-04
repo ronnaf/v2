@@ -13,15 +13,15 @@ export interface Project {
   screenshots: Screenshot[];
 }
 
-export interface Thumbnail {
+interface Thumbnail {
   url: string;
 }
 
-export interface Link {
+interface Link {
   provider: string;
   link: string;
 }
 
-export interface Screenshot {
+interface Screenshot {
   url: string;
 }

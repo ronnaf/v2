@@ -10,7 +10,7 @@ interface Props {
   project: Project;
 }
 
-export const FeaturedProject = (props: Props) => {
+export const FeaturedProjectCard = (props: Props) => {
   const [secondary500] = useToken("colors", ["secondary.500"]);
   return (
     <Grid gap={{ sm: 6, md: 10 }} templateColumns={{ sm: "1fr", md: "1fr 2fr" }}>

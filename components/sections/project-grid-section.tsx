@@ -5,7 +5,7 @@ import React, { forwardRef } from "react";
 import { Project } from "../../lib/models/project";
 import { inPx } from "../../lib/utils/in-px";
 import build from "../../public/build.png";
-import { ContentWrapper } from "../core/content-wrapper";
+import { LayoutWrapper } from "../core/layout-wrapper";
 import { ProjectCard } from "../project-card";
 
 const ICON_SIZE = inPx(60);
@@ -16,7 +16,7 @@ interface Props {
 
 export const ProjectGridSection = forwardRef<HTMLDivElement, Props>((props, ref) => {
   return (
-    <ContentWrapper ref={ref} py={16} minH="100vh">
+    <LayoutWrapper ref={ref} py={16} minH="100vh">
       <VStack spacing={6}>
         <Box pos="relative">
           <Image src={build} alt="Build" width={ICON_SIZE} height={ICON_SIZE} />
@@ -37,7 +37,7 @@ export const ProjectGridSection = forwardRef<HTMLDivElement, Props>((props, ref)
           return <ProjectCard key={project.id} project={project} />;
         })}
       </Grid>
-    </ContentWrapper>
+    </LayoutWrapper>
   );
 });
 

@@ -3,6 +3,7 @@ import { Box, VStack } from "@chakra-ui/layout";
 import React from "react";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
+// TODO: store in dato
 const socialLinks = [
   {
     id: "github",

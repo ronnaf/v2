@@ -5,7 +5,7 @@ import { Project } from "../../lib/models/project";
 import { inPx } from "../../lib/utils/in-px";
 import rocket from "../../public/rocket.png";
 import { ContentWrapper } from "../core/content-wrapper";
-import { FeaturedProject } from "../featured-project";
+import { FeaturedProjectCard } from "../featured-project-card";
 
 // All these values are in pixels
 const ROCKET_ICON_SIZE = 60;
@@ -59,7 +59,7 @@ export const FeaturedProjectsSection = forwardRef<HTMLDivElement, Props>((props,
       </VStack>
       <VStack mt={inPx(ROCKET_LINE_HEIGHT + 24)} alignItems="flex-start" spacing={12}>
         {props.projects.map((project) => (
-          <FeaturedProject key={project.id} project={project} />
+          <FeaturedProjectCard key={project.id} project={project} />
         ))}
       </VStack>
     </ContentWrapper>

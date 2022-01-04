@@ -1,30 +1,17 @@
-import { Box, Heading, HStack, Spacer, Text, VStack, Flex } from "@chakra-ui/layout";
+import { Flex, Heading, HStack, Spacer, Text, VStack } from "@chakra-ui/layout";
 import { Icon, useToken } from "@chakra-ui/react";
 import _ from "lodash";
 import Image from "next/image";
 import React from "react";
 import { FiGithub, FiLink } from "react-icons/fi";
 import { Project } from "../lib/models/project";
-import { inPx } from "../lib/utils/in-px";
+import crossPlatformIcon from "../public/cross_platform_logo.png";
+import desktopIcon from "../public/desktop_logo.png";
 import mobileIcon from "../public/mobile_logo.png";
 import webIcon from "../public/web_logo.png";
-import desktopIcon from "../public/desktop_logo.png";
-import crossPlatformIcon from "../public/cross_platform_logo.png";
 
 type Props = {
   project: Project;
-};
-
-const thumbnailDimensions = {
-  mobile: {
-    w: inPx(42),
-    h: inPx(36),
-  },
-  // 16:9 Aspect ratio
-  web: {
-    w: inPx(64),
-    h: inPx(36),
-  },
 };
 
 export const ProjectCard = ({ project }: Props) => {

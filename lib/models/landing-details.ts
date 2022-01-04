@@ -1,4 +1,4 @@
-export interface Landing {
+export interface LandingDetails {
   greeting: string;
   title: string;
   subtitle: string;

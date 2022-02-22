@@ -12,8 +12,9 @@ interface Props {
 
 export const FeaturedProjectCard = (props: Props) => {
   const [secondary500] = useToken("colors", ["secondary.500"]);
+
   return (
-    <Grid gap={{ sm: 6, md: 10 }} templateColumns={{ sm: "1fr", md: "1fr 2fr" }}>
+    <Grid w="full" gap={{ sm: 6, md: 10 }} templateColumns={{ sm: "1fr", md: "1fr 2fr" }}>
       <Box pos="relative" flexShrink={0} h="196px" borderRadius="lg" overflow="hidden">
         <Image src={props.project.thumbnail.url} alt="Rocket" layout="fill" objectFit="cover" />
       </Box>

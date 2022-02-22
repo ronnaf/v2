@@ -1,4 +1,3 @@
-import { Button } from "@chakra-ui/button";
 import { Box, Grid, Text, VStack } from "@chakra-ui/layout";
 import Image from "next/image";
 import React, { forwardRef } from "react";
